@@ -3,6 +3,11 @@
 require_relative 'classes/task_interface'
 
 def main
+  if ARGV.empty?
+    puts 'Usage: ./task_tracker_cli.rb <operation> <other arguments>'
+    exit
+  end
+
   operation = ARGV[0]
 
   case operation
