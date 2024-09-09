@@ -20,7 +20,7 @@ class TaskInterface
   end
 
   def add(description)
-    raise ArgumentError, 'please provide a description' if description.nil? || description.empty?
+    raise(ArgumentError, 'please provide a description') if description.nil? || description.empty?
 
     id = max_id + 1
     tasks[id] = {
@@ -38,7 +38,7 @@ class TaskInterface
 
   def edit(id, description)
     find_by_id!(id)
-    raise ArgumentError, 'please provide a description' if description.nil? || description.empty?
+    raise(ArgumentError, 'please provide a description') if description.nil? || description.empty?
 
     symbol_id = id.to_s.to_sym
     tasks[symbol_id] = {
